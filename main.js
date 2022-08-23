@@ -45,8 +45,7 @@ function submit() {
     console.log(numberOfToDo);
     toDoList.push(toDoInput.value);
     numberOfToDo++;
-    addingCheckedTag()
-    toDoInput.value = "";
+    addingCheckedTag();
   } else {
     toDoInput.animate(
       [
@@ -104,8 +103,7 @@ function checking(e) {
   }
 }
 
-
-function addingCheckedTag () {
+function addingCheckedTag() {
   for (let i = 0; i < checkedBoxes.length; i++) {
     document.getElementById(checkedBoxes[i]).checked = true;
   }

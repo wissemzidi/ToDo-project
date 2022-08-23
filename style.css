@@ -10,8 +10,7 @@
 }
 
 body {
-  /* background-image: linear-gradient(to bottom right, rgb(31, 31, 31), rgb(35, 30, 41)); */
-  background-color: #202020;
+  background-color: #202124;
   display: grid;
   min-height: 100vh;
   min-width: 100vw;
@@ -27,40 +26,68 @@ body {
   min-height: 10vh;
 }
 
-input {
+#toDo {
   width: clamp(12rem, 50vw, 20rem);
-  padding: 0 0.2em;
-  color: black;
-  border-radius: 10px 0 0 10px;
-  border-color: transparent;
-  outline: none;
+  padding: 0.2em 0.4em;
+  color: #e6e6e6;
+  background-color: transparent;
+  border-radius: 10px;
+  border: none;
+  background-color: #202124;
+  outline: rgba(255, 255, 255, 0.2) 1px solid;
   transition: 0.3s all ease-out;
 }
 
-input:where(:focus-visible, :hover) {
-  box-shadow: 0px 0px 15px -5px rgba(255, 255, 255, 0.325);
-  transform: scale(1.01);
+#toDo:where(:focus-visible, :hover) {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 1);
+  background-color: #303134;
 }
 
-button {
-  border-color: transparent;
+#input__btns {
+  outline: rgba(255, 255, 255, 0.2) 1px solid;
+  border-radius: 15px;
+  background-color: #202124;
+}
+
+#submit {
+  border: none;
   outline: none;
-  color: white;
-  background-color: rgb(3, 116, 255);
-  padding: 0 0.2em;
-  border-radius: 0 10px 10px 0;
+  color: #e6e6e6;
+  background-color: transparent;
+  padding: 0.2em 0.4em;
+  border-radius: 10px;
   cursor: pointer;
+  transition: 0.3s all ease-out;
 }
 
-@media screen and (max-width: 400px) {
-  .inputContainer{
+#submit:where(:hover, :focus-visible) {
+  background-color: #303134;
+}
+
+#Undo__btn {
+  border: none;
+  outline: none;
+  padding: 0.2em 0.4em;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.076);
+  color: rgb(154, 34, 7);
+  margin-left: 0.1rem;
+  border-radius: 20px;
+  transition: 0.3s all ease-out;
+}
+
+#Undo__btn:where(:hover, :focus-visible) {
+  color: rgb(250, 0, 0);
+  background-color: #e6e6e6;
+}
+
+@media screen and (max-width: 550px) {
+  .inputContainer {
     grid-auto-flow: row;
   }
-  input {
+  #toDo {
     width: 90vw;
-    border-radius: 10px;
-}
-  button{
     border-radius: 10px;
   }
 }
@@ -76,7 +103,7 @@ button {
   width: min(90%, 30rem);
   margin: 1rem;
   padding: 1rem;
-  background-color: rgba(86, 99, 120, 0.202);
+  background-color: #292b31c4;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -88,19 +115,17 @@ button {
   display: flex;
   gap: 1rem;
   width: 100%;
-  /* animation: wigleWigle .1s ease-out forwards; */
 }
 
 .checkboxContainer input {
   transform: scale(1.25);
   width: fit-content;
-  transition: all 0.3s ease-out;
-  outline: none;
   border: none;
+  transition: all 0.2s ease-out;
 }
 
 .checkboxContainer input:hover {
-  transform: scale(1.25);
+  box-shadow: 0 0 5px 5px #303134;
 }
 
 .checkboxContainer label {
@@ -135,11 +160,4 @@ button {
   100% {
     transform: translateX(0);
   }
-}
-
-#Undo__btn{
-  background-color: white;
-  color: blue;
-  margin-left: .1rem;
-  border-radius: 20px;
 }
