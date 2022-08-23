@@ -63,7 +63,7 @@ function submit() {
 
 let undoContent = [];
 function deleteParent(e) {
-  undoContent.push(e.parentElement);
+  undoContent.unshift(e.parentElement);
   e.parentElement.remove();
 }
 
