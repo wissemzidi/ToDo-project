@@ -58,6 +58,7 @@ function submit() {
     `;
     toDoListContainer.innerHTML += pageContent;
     numberOfToDo++;
+    toDoInput.value = "";
   } else {
     toDoInput.animate(
       [
