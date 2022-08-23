@@ -5,25 +5,26 @@ const toDoListContainer = document.querySelector("#toDoListContainer");
 
 // variables
 let toDoList = [];
+let undoContent = [];
+let undoNumber = [];
 let numberOfToDo = 0;
-
 function toDoStyle(numberOfToDo, inputValue) {
   pageContent = `
-  <div id="checkbox${numberOfToDo}Container" class="checkboxContainer">
-  <div id="delete${numberOfToDo}" onclick="deleteParent(this)">
-    <img
-      onmouseover="this.src
-      ='./assets/icons/delete(img).svg'"
-      height="20px"
-      onmouseout="this.src='./assets/icons/delete.svg'"
-      src="./assets/icons/delete.svg"
-      alt="X"
-    />
-  </div>
-  <input class="checkbox${numberOfToDo}" type="checkbox" />
-  <label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
-  ${inputValue}
-  </label>
+  <div id="${numberOfToDo}" class="checkboxContainer">
+    <div id="delete${numberOfToDo}" onclick="deleteParent(this)">
+      <img
+        onmouseover="this.src
+        ='./assets/icons/delete(img).svg'"
+        height="20px"
+        onmouseout="this.src='./assets/icons/delete.svg'"
+        src="./assets/icons/delete.svg"
+        alt="X"
+      />
+    </div>
+    <input class="checkbox${numberOfToDo}" type="checkbox" onclick="checking(this)"/>
+    <label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
+    ${inputValue}
+    </label>
   </div>
   `;
   return pageContent;
@@ -39,9 +40,9 @@ window.addEventListener("keypress", () => {
 // functions
 function submit() {
   if (!toDoList.includes(toDoInput.value) && toDoInput.value != "") {
-    // console.log(numberOfToDo, toDoInput.value);
-    toDoList.push(toDoInput.value);
     toDoListContainer.innerHTML += toDoStyle(numberOfToDo, toDoInput.value);
+    console.log(numberOfToDo);
+    toDoList.push(toDoInput.value);
     numberOfToDo++;
     toDoInput.value = "";
   } else {
@@ -59,12 +60,14 @@ function submit() {
       toDoInput.style.boxShadow = "none";
     }, 1000);
   }
+  toDoInput.value = "";
 }
 
-let undoContent = [];
 function deleteParent(e) {
   undoContent.unshift(e.parentElement);
   e.parentElement.remove();
+  toDoNumber = e.parentElement.id;
+  undoNumber.unshift(toDoNumber);
 }
 
 document.addEventListener("keydown", () => {
@@ -76,7 +79,7 @@ document.addEventListener("keydown", () => {
 function undelete() {
   if (undoContent.length != 0) {
     toDoListContainer.innerHTML += `
-    <div id="checkbox${numberOfToDo}Container" class="checkboxContainer">
+    <div id="${undoNumber.shift()}" class="checkboxContainer">
     ${undoContent.shift().innerHTML}
     </div>
     `;

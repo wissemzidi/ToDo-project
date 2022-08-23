@@ -10,7 +10,8 @@
 }
 
 body {
-  background-color: rgb(50, 50, 50);
+  /* background-image: linear-gradient(to bottom right, rgb(31, 31, 31), rgb(35, 30, 41)); */
+  background-color: #202020;
   display: grid;
   min-height: 100vh;
   min-width: 100vw;
@@ -110,6 +111,12 @@ button {
 
 .checkboxContainer input:checked,
 .checkboxContainer input:checked ~ label {
+  text-decoration: line-through;
+  font-weight: 300;
+  opacity: 0.5;
+}
+
+.checked {
   text-decoration: line-through;
   font-weight: 300;
   opacity: 0.5;
