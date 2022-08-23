@@ -6,24 +6,28 @@ const toDoListContainer = document.querySelector("#toDoListContainer");
 // variables
 let toDoList = [];
 let numberOfToDo = 0;
-let pageContent = `
-<div id="checkbox${numberOfToDo}Container" class="checkboxContainer">
-<div id="delete${numberOfToDo}" onclick="deleteParent(this)">
-  <img
-    onmouseover="this.src
-    ='./assets/icons/delete(img).svg'"
-    height="20px"
-    onmouseout="this.src='./assets/icons/delete.svg'"
-    src="./assets/icons/delete.svg"
-    alt="X"
-  />
-</div>
-<input class="checkbox${numberOfToDo}" type="checkbox" />
-<label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
-${toDoInput.value}
-</label>
-</div>
-`;
+
+function toDoStyle(numberOfToDo, inputValue) {
+  pageContent = `
+  <div id="checkbox${numberOfToDo}Container" class="checkboxContainer">
+  <div id="delete${numberOfToDo}" onclick="deleteParent(this)">
+    <img
+      onmouseover="this.src
+      ='./assets/icons/delete(img).svg'"
+      height="20px"
+      onmouseout="this.src='./assets/icons/delete.svg'"
+      src="./assets/icons/delete.svg"
+      alt="X"
+    />
+  </div>
+  <input class="checkbox${numberOfToDo}" type="checkbox" />
+  <label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
+  ${inputValue}
+  </label>
+  </div>
+  `;
+  return pageContent;
+}
 
 // idk
 window.addEventListener("keypress", () => {
@@ -35,28 +39,9 @@ window.addEventListener("keypress", () => {
 // functions
 function submit() {
   if (!toDoList.includes(toDoInput.value) && toDoInput.value != "") {
-    console.log(numberOfToDo, toDoInput.value);
+    // console.log(numberOfToDo, toDoInput.value);
     toDoList.push(toDoInput.value);
-    console.log(toDoList);
-    pageContent = `
-    <div id="checkbox${numberOfToDo}Container" class="checkboxContainer">
-    <div id="delete${numberOfToDo}" onclick="deleteParent(this)">
-      <img
-        onmouseover="this.src
-        ='./assets/icons/delete(img).svg'"
-        height="20px"
-        onmouseout="this.src='./assets/icons/delete.svg'"
-        src="./assets/icons/delete.svg"
-        alt="X"
-      />
-    </div>
-    <input class="checkbox${numberOfToDo}" type="checkbox" />
-    <label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
-    ${toDoInput.value}
-    </label>
-    </div>
-    `;
-    toDoListContainer.innerHTML += pageContent;
+    toDoListContainer.innerHTML += toDoStyle(numberOfToDo, toDoInput.value);
     numberOfToDo++;
     toDoInput.value = "";
   } else {
@@ -81,11 +66,9 @@ let undoCounter = 0;
 function deleteParent(e) {
   undoContent = e.parentElement;
   e.parentElement.remove();
-  console.log(undoContent);
   if (undoCounter == 0) {
     undoCounter++;
   }
-  console.log(undoCounter);
 }
 
 document.addEventListener("keydown", () => {
