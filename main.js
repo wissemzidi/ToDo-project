@@ -61,14 +61,10 @@ function submit() {
   }
 }
 
-let undoContent;
-let undoCounter = 0;
+let undoContent = [];
 function deleteParent(e) {
-  undoContent = e.parentElement;
+  undoContent.push(e.parentElement);
   e.parentElement.remove();
-  if (undoCounter == 0) {
-    undoCounter++;
-  }
 }
 
 document.addEventListener("keydown", () => {
@@ -78,12 +74,11 @@ document.addEventListener("keydown", () => {
 });
 
 function undelete() {
-  if (undoCounter == 1) {
+  if (undoContent.length != 0) {
     toDoListContainer.innerHTML += `
     <div id="checkbox${numberOfToDo}Container" class="checkboxContainer">
-    ${undoContent.innerHTML}
+    ${undoContent.shift().innerHTML}
     </div>
     `;
-    undoCounter--;
   }
 }
