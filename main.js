@@ -8,6 +8,7 @@ let toDoList = [];
 let undoContent = [];
 let undoNumber = [];
 let numberOfToDo = 0;
+let checkedBoxes = [];
 function toDoStyle(numberOfToDo, inputValue) {
   pageContent = `
   <div id="${numberOfToDo}" class="checkboxContainer">
@@ -21,7 +22,7 @@ function toDoStyle(numberOfToDo, inputValue) {
         alt="X"
       />
     </div>
-    <input class="checkbox${numberOfToDo}" type="checkbox" onclick="checking(this)"/>
+    <input id="checkbox${numberOfToDo}" type="checkbox" onclick="checking(this)"/>
     <label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
     ${inputValue}
     </label>
@@ -44,6 +45,7 @@ function submit() {
     console.log(numberOfToDo);
     toDoList.push(toDoInput.value);
     numberOfToDo++;
+    addingCheckedTag()
     toDoInput.value = "";
   } else {
     toDoInput.animate(
@@ -66,7 +68,7 @@ function submit() {
 function deleteParent(e) {
   undoContent.unshift(e.parentElement);
   e.parentElement.remove();
-  toDoNumber = e.parentElement.id;
+  let toDoNumber = e.parentElement.id;
   undoNumber.unshift(toDoNumber);
 }
 
@@ -83,5 +85,28 @@ function undelete() {
     ${undoContent.shift().innerHTML}
     </div>
     `;
+  }
+}
+
+function checking(e) {
+  let checkboxId = e.id;
+  let checkboxNb = checkboxId.slice(8);
+  if (e.checked != true) {
+    checkedBoxes.splice(
+      checkedBoxes.indexOf(checkboxId),
+      checkedBoxes.indexOf(checkboxId) + 1
+    );
+    console.log(checkedBoxes);
+  } else {
+    e.checked = true;
+    checkedBoxes.push(e.id);
+    console.log(checkedBoxes);
+  }
+}
+
+
+function addingCheckedTag () {
+  for (let i = 0; i < checkedBoxes.length; i++) {
+    document.getElementById(checkedBoxes[i]).checked = true;
   }
 }
