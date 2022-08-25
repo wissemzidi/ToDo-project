@@ -1,12 +1,10 @@
-# Read Me Template 👋
-
 ## [Live-Server](https://todo-wissem.netlify.app)
 
 <img src="./preview.png" alt="">
 
 ---
 
-### Table of Contents
+### Table of Contents 👋
 
 You're sections headers will be used to reference location of destination.
 
