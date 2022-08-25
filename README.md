@@ -50,7 +50,7 @@ Creating ReadMe's for your Github repository can be tedious. I hope this templat
 
 ---
 
-## License ©️
+# License ©️
 
 MIT License
 
@@ -78,7 +78,7 @@ SOFTWARE.
 
 ---
 
-## ✨ Author Info ✨
+# ✨ Author Info ✨
 
 ### Created By Wissem Zidi <img src="https://github.com/Wissem-Zidi/styled-card/blob/main/page%20logo.jpg" alt="" height="30">
 
