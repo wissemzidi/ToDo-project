@@ -17,32 +17,28 @@ body {
   overflow-x: hidden;
 }
 
-body::before {
+body::before, body::after {
   content: "";
   position: absolute;
-  top: -25%;
-  right: -30%;
-  background-color: rgba(31, 126, 177);
   filter: blur(20px);
   opacity: 0.1;
   border-radius: 50%;
-  height: 20rem;
   aspect-ratio: 1;
   z-index: -100;
 }
 
+body::before {
+  top: -25%;
+  right: -30%;
+  background-color: rgba(31, 126, 177);
+  height: 20rem;
+}
+
 body::after {
-  content: "";
-  position: absolute;
   bottom: 0;
   left: 0;
   background-color: rgb(68, 26, 83);
-  filter: blur(20px);
-  opacity: 0.1;
-  border-radius: 50%;
   height: 10rem;
-  z-index: -100;
-  aspect-ratio: 1;
 }
 
 .inputContainer {
@@ -51,7 +47,7 @@ body::after {
   grid-auto-flow: column;
   place-items: center;
   justify-content: center;
-  min-width: 100vw;
+  width: 100vw;
   min-height: 10vh;
 }
 
