@@ -1,4 +1,4 @@
-# Created By Wissem Zidi <img src="https://github.com/Wissem-Zidi/styled-card/blob/main/wissem-logo.jpg" alt="" height="30">
+# Created By Wissem Zidi <img src="https://github.com/Wissem-Zidi/ToDo-project/blob/main/wissem-zidi-logo.jpg" alt="" height="30">
 
 
 ## [Live-Server](https://todo-wissem.netlify.app)
