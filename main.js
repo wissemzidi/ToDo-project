@@ -131,3 +131,4 @@ function addingCheckedTag() {
     document.getElementById(checkedBoxes[i]).checked = true;
   }
 }
+
