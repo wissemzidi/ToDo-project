@@ -1,4 +1,4 @@
-## [Live-Server](https://todo-wissem.netlify.app)
+## [Live-Server 👀](https://todo-wissem.netlify.app)
 
 <img src="./preview.png" alt="">
 
@@ -16,11 +16,11 @@ You're sections headers will be used to reference location of destination.
 
 ---
 
-## Description
+## Description 📄
 
 Creating ReadMe's for your Github repository can be tedious. I hope this template can save you time and effort as well as provide you with some consistency across your projects.
 
-#### 🛠️ Technologies
+#### Technologies 🛠️
 
 - HTML 5
 - CSS 3
@@ -30,7 +30,7 @@ Creating ReadMe's for your Github repository can be tedious. I hope this templat
 
 ---
 
-## How To Use
+## How To Use 📙
 
 #### Installation
 
@@ -44,13 +44,13 @@ Creating ReadMe's for your Github repository can be tedious. I hope this templat
 
 ---
 
-## References
-
+## References 📋
+ 
 [Back To The Top](#)
 
 ---
 
-## ©️ License
+## License ©️
 
 MIT License
 
@@ -78,7 +78,7 @@ SOFTWARE.
 
 ---
 
-## ℹ️ Author Info
+## Author Info ℹ️
 
 ### Created By Wissem Zidi <img src="https://github.com/Wissem-Zidi/styled-card/blob/main/page%20logo.jpg" alt="" height="30">
 
