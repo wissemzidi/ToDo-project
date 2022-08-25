@@ -1,8 +1,8 @@
 # Read Me Template 👋
 
-## [Live-Server]()
+## [Live-Server](https://todo-wissem.netlify.app)
 
-<img src="./preview.jpg" alt="">
+<img src="./preview.png" alt="">
 
 ---
 
