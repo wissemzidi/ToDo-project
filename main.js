@@ -6,13 +6,14 @@ const toDoListContainer = document.querySelector("#toDoListContainer");
 // variables
 let toDoList = [];
 let undoContent = [];
+let undoContentInnerHtml = [];
 let undoNumber = [];
-let numberOfToDo = 0;
+// let numberOfToDo = 0;
 let checkedBoxes = [];
-function toDoStyle(numberOfToDo, inputValue) {
+function toDoStyle(toDoNumber, inputValue) {
   pageContent = `
-  <div id="${numberOfToDo}" class="checkboxContainer">
-    <div id="delete${numberOfToDo}" onclick="deleteParent(this)">
+  <div id="${toDoNumber}" class="checkboxContainer">
+    <div id="delete${toDoNumber}" onclick="deleteParent(this)">
       <img
         onmouseover="this.src
         ='./assets/icons/delete(img).svg'"
@@ -22,8 +23,8 @@ function toDoStyle(numberOfToDo, inputValue) {
         alt="X"
       />
     </div>
-    <input id="checkbox${numberOfToDo}" type="checkbox" onclick="checking(this)"/>
-    <label class="label${numberOfToDo}" for="checkbox${numberOfToDo}">
+    <input id="checkbox${toDoNumber}" type="checkbox" onclick="checking(this)"/>
+    <label class="label${toDoNumber}" for="checkbox${toDoNumber}">
     ${inputValue}
     </label>
   </div>
@@ -36,15 +37,29 @@ window.addEventListener("keypress", () => {
   if (event.keyCode == 13) {
     submit();
   }
+  if (event.key === "Escape") {
+    undelete();
+  }
 });
 
 // functions
 function submit() {
   if (!toDoList.includes(toDoInput.value) && toDoInput.value != "") {
-    toDoListContainer.innerHTML += toDoStyle(numberOfToDo, toDoInput.value);
-    console.log(numberOfToDo);
+    for (let i = 0; i < undoContentInnerHtml.length; i++) {
+      if (undoContentInnerHtml[i].includes(toDoInput.value)) {
+        if (undoContent.length == 1) {
+          undoContentInnerHtml.shift();
+          undoContent.shift();
+          undoNumber.shift();
+        } else if (undoContent.length > 1) {
+          undoContentInnerHtml.splice(i, i);
+          undoContent.splice(i, i);
+          undoNumber.splice(i, i);
+        }
+      }
+    }
+    toDoListContainer.innerHTML += toDoStyle(toDoList.length, toDoInput.value);
     toDoList.push(toDoInput.value);
-    numberOfToDo++;
     addingCheckedTag();
   } else {
     toDoInput.animate(
@@ -66,24 +81,34 @@ function submit() {
 
 function deleteParent(e) {
   undoContent.unshift(e.parentElement);
-  e.parentElement.remove();
-  let toDoNumber = e.parentElement.id;
-  undoNumber.unshift(toDoNumber);
-}
-
-document.addEventListener("keydown", () => {
-  if (event.key === "Escape") {
-    undelete();
+  let labelInnerHtml = document
+    .querySelector(`.label${e.parentElement.id}`)
+    .innerHTML.trim();
+  undoContentInnerHtml.unshift(labelInnerHtml);
+  if (toDoList.length == 1) {
+    toDoList.shift();
+  } else if (toDoList.length > 1) {
+    toDoList.splice(
+      toDoList.indexOf(labelInnerHtml),
+      toDoList.indexOf(labelInnerHtml)
+    );
   }
-});
+  undoNumber.unshift(e.parentElement.id);
+  e.parentElement.remove();
+}
 
 function undelete() {
   if (undoContent.length != 0) {
+    let a = undoNumber.shift();
+    let b = undoContent.shift();
     toDoListContainer.innerHTML += `
-    <div id="${undoNumber.shift()}" class="checkboxContainer">
-    ${undoContent.shift().innerHTML}
+    <div id="${a}" class="checkboxContainer">
+    ${b.innerHTML}
     </div>
     `;
+    let labelInnerHtml = document.querySelector(`.label${a}`).innerHTML.trim();
+    toDoList.unshift(labelInnerHtml);
+    undoContentInnerHtml.shift();
   }
 }
 
@@ -95,11 +120,9 @@ function checking(e) {
       checkedBoxes.indexOf(checkboxId),
       checkedBoxes.indexOf(checkboxId) + 1
     );
-    console.log(checkedBoxes);
   } else {
     e.checked = true;
     checkedBoxes.push(e.id);
-    console.log(checkedBoxes);
   }
 }
 
