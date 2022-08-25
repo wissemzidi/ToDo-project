@@ -10,16 +10,44 @@
 }
 
 body {
-  background-color: #202124;
+  background-color: #1a1a1c;
   display: grid;
   min-height: 100vh;
   min-width: 100vw;
   overflow-x: hidden;
 }
 
+body::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: -30%;
+  background-color: rgba(31, 126, 177);
+  filter: blur(20px);
+  opacity: 0.1;
+  border-radius: 50%;
+  height: 20rem;
+  aspect-ratio: 1;
+  z-index: -100;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(68, 26, 83);
+  filter: blur(20px);
+  opacity: 0.1;
+  border-radius: 50%;
+  height: 10rem;
+  z-index: -100;
+  aspect-ratio: 1;
+}
+
 .inputContainer {
   display: grid;
-  gap: .5rem;
+  gap: 0.5rem;
   grid-auto-flow: column;
   place-items: center;
   justify-content: center;
@@ -45,7 +73,7 @@ body {
 }
 
 #input__btns {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   outline: rgba(255, 255, 255, 0.2) 1px solid;
   border-radius: 15px;
   background-color: #202124;
@@ -111,6 +139,9 @@ body {
   flex-direction: column;
   gap: 0.5rem;
   overflow-x: hidden;
+  outline: 1px rgba(255, 255, 255, 0.2) solid;
+  box-shadow: inset 0 0 5px 1px rgba(43, 62, 90, 0.523), 
+  0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .checkboxContainer {
