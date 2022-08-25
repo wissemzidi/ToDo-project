@@ -19,6 +19,7 @@ body {
 
 .inputContainer {
   display: grid;
+  gap: .5rem;
   grid-auto-flow: column;
   place-items: center;
   justify-content: center;
@@ -44,6 +45,7 @@ body {
 }
 
 #input__btns {
+  margin-left: .5rem;
   outline: rgba(255, 255, 255, 0.2) 1px solid;
   border-radius: 15px;
   background-color: #202124;
