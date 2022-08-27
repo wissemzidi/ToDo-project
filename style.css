@@ -9,15 +9,22 @@
   box-sizing: border-box;
 }
 
+html {
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   background-color: #1a1a1c;
   display: grid;
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
-body::before, body::after {
+body::before,
+body::after {
   content: "";
   position: absolute;
   filter: blur(20px);
@@ -136,8 +143,8 @@ body::after {
   gap: 0.5rem;
   overflow-x: hidden;
   outline: 1px rgba(255, 255, 255, 0.2) solid;
-  box-shadow: inset 0 0 5px 1px rgba(43, 62, 90, 0.523), 
-  0 0 5px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 5px 1px rgba(43, 62, 90, 0.523),
+    0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .checkboxContainer {

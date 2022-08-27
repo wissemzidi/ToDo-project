@@ -8,7 +8,6 @@ let toDoList = [];
 let undoContent = [];
 let undoContentInnerHtml = [];
 let undoNumber = [];
-// let numberOfToDo = 0;
 let checkedBoxes = [];
 function toDoStyle(toDoNumber, inputValue) {
   pageContent = `
@@ -33,8 +32,8 @@ function toDoStyle(toDoNumber, inputValue) {
 }
 
 // idk
-window.addEventListener("keypress", () => {
-  if (event.keyCode == 13) {
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
     submit();
   }
   if (event.key === "Escape") {
@@ -131,4 +130,3 @@ function addingCheckedTag() {
     document.getElementById(checkedBoxes[i]).checked = true;
   }
 }
-
