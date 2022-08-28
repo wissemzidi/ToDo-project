@@ -6,55 +6,53 @@
 
 ### Table of Contents 👋
 
-You're sections headers will be used to reference location of destination.
-
-- [Description](#description)
-- [How To Use](#how-to-use)
-- [References](#references)
-- [License](#license)
-- [Author Info](#author-info)
+- [Description 📄](#description)
+- [How To Use 📙](#how-to-use)
+- [References <img src="https://github.com/Wissem-Zidi/icons/blob/main/reference.svg" height="15" alt="">](#references)
+- [License <img src="https://github.com/Wissem-Zidi/icons/blob/main/licence.svg" height="15" alt="">](#license)
+- [Author Info ✆](#author-info)
 
 ---
 
-## Description 📄
+## Description
 
-Creating ReadMe's for your Github repository can be tedious. I hope this template can save you time and effort as well as provide you with some consistency across your projects.
+This project is an input validation with a styling.
 
-#### Technologies 🛠️
+#### Technologies <img src="https://github.com/Wissem-Zidi/icons/blob/main/technologies.svg" alt="🛠️" height="20">
 
 - HTML 5
 - CSS 3
 - Java Script
 
-[Back To The Top](#)
+[Back To The Top](#read-me)
 
 ---
 
-## How To Use 📙
+## How To Use
 
-#### Installation
+#### Installation <img src="https://github.com/Wissem-Zidi/icons/blob/main/settings.svg" alt="" height="25">
 
-#### API Reference
+#### API Reference <img src="https://github.com/Wissem-Zidi/icons/blob/main/api.svg" alt="" height="25">
 
 ```html
 <p>dummy code</p>
 ```
 
-[Back To The Top](#)
+[Back To The Top](#read-me)
 
 ---
 
-## References 📋
- 
-[Back To The Top](#)
+## References
+
+[Back To The Top](#read-me)
 
 ---
 
-# License ©️
+## License
 
-MIT License
+MIT License <img src="https://github.com/Wissem-Zidi/icons/blob/main/licence.svg" height="20" alt="">
 
-Copyright (c) [2017]
+Copyright (c) 2022 Wissem
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -74,23 +72,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-[Back To The Top](#)
+[Back To The Top](#read-me)
 
 ---
 
-# ✨ Author Info ✨
+## Author Info
 
-### Created By Wissem Zidi <img src="https://github.com/Wissem-Zidi/styled-card/blob/main/page%20logo.jpg" alt="" height="30">
+### Created By Wissem Zidi <img src="https://github.com/Wissem-Zidi/icons/blob/main/wissem-zidi-logo.jpg" alt="" height="25">
 
-### ✆ Want to contact Me?
+- [Website <img src="https://github.com/Wissem-Zidi/icons/blob/main/home.svg" alt="" height="15">](https://wissem-zidi.netlify.com)
+- [Email <img src="https://github.com/Wissem-Zidi/icons/blob/main/Email.svg" alt="" height="15">](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=wissem.zidi.ofc@gmail.com)
+- [Github <img src="https://github.com/Wissem-Zidi/icons/blob/main/github.svg" alt="" height="15">](https://github.com/Wissem-Zidi/)
 
-- [Facebook](https://www.facebook.com/wissem.zidi.ofc/)
-- [Messenger](https://msng.link/o/?wissem.zidi.ofc=fm)
-- [Email](https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=wissem.zidi.ofc@gmail.com)
-- [Stack Overflow](https://stackoverflow.com/users/19135958/wissem)
-- [Github](https://github.com/Wissem-Zidi/)
-- [Whats App](https://wa.me/25561960?text=)
-
-[Back To The Top](#)
+[Back To The Top](#read-me)
 
 **Have a nice day!** 🚀
